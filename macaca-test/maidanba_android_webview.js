@@ -50,10 +50,11 @@ describe('macaca mobile sample', function() {
   
   var wdport = process.env.MACACA_SERVER_PORT;
   var driver = null;
-  console.log('******************************'+wdport+'********************************************');
+  console.log('******************************jsport:'+wdport+'********************************************');
   if(wdport==3456){
     driver = wd.initPromiseChain();
    }else{
+      console.log('******************************jsport:'+wdport+'********************************************');
     driver = wd.initPromiseChain({port:wdport});
    }
 
