@@ -22,7 +22,9 @@ var iOSOpts = {
 
   // app: path.join(__dirname, '..', 'app', `${platform}-app-bootstrap.zip`)
 };
-
+var wdPort ={
+  port:process.env.MACACA_SERVER_PORT ||'3456',
+};
 var androidOpts = {
   platformName: 'Android',
   package: 'com.bankcomm.maidanba',
@@ -48,8 +50,12 @@ wd.addPromiseChainMethod('customback', function() {
 
 describe('macaca mobile sample', function() {
   this.timeout(5 * 60 * 1000);
-
-  var driver = wd.initPromiseChain();
+  var driver = null;
+  if(wdPort.port==='3456'){
+    driver = wd.initPromiseChain();
+   }else{
+    driver = wd.initPromiseChain(wdPort);
+   }
 
   driver.configureHttp({
     timeout: 600000
