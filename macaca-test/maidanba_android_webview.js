@@ -2,6 +2,7 @@
 
 var path = require('path');
 var _ = require('macaca-utils');
+var detect = require('detect-port');
 var xml2map = require('xml2map');
 
 var platform = process.env.platform || 'android';
