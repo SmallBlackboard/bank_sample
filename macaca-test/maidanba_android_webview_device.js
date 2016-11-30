@@ -2,6 +2,7 @@
 
 var path = require('path');
 var _ = require('macaca-utils');
+var detect = require('detect-port');
 var xml2map = require('xml2map');
 
 var platform = process.env.platform || 'android';
@@ -22,17 +23,12 @@ var iOSOpts = {
 
   // app: path.join(__dirname, '..', 'app', `${platform}-app-bootstrap.zip`)
 };
-var wdPort ={
-port:process.env.MACACA_SERVER_PORT ||'3456',
-};
 var androidOpts = {
   platformName: 'Android',
-  package: 'com.bankcomm.Bankcomm',
+  package: 'com.bankcomm.maidanba',
   reuse: 2,
-  udid: process.env.udid || '2353c4bb',
-//   udid: 'PBV0216706008526',
-  
-  activity: 'com.bankcomm.config.ConfigActivity',
+  udid:  process.env.udid || 'DU2MYN146D002912',
+  activity: '.activity.SplashActivity',
   // activity: 'com.bankcomm.maidanba/.activity.SplashActivity',
   // app: path.join(__dirname, '..', 'app', `${platform}-app-bootstrap.zip`)
 };
@@ -52,13 +48,16 @@ wd.addPromiseChainMethod('customback', function() {
 
 describe('macaca mobile sample', function() {
   this.timeout(5 * 60 * 1000);
+  
+  var wdport = process.env.MACACA_SERVER_PORT;
   var driver = null;
-  if(wdPort.port==='3456'){
-      wd.initPromiseChain();
+  console.log('******************************jsport:'+wdport+'********************************************');
+  if(wdport==3456){
+    driver = wd.initPromiseChain();
    }else{
-      wd.initPromiseChain(wdPort);
+      console.log('******************************jsport:'+wdport+'********************************************');
+    driver = wd.initPromiseChain({port:wdport});
    }
-   
 
   driver.configureHttp({
     timeout: 600000
@@ -99,7 +98,7 @@ describe('macaca mobile sample', function() {
   // });
 
 
-   it('#1 点击金融按钮', function() {
+  it('#1 点击金融按钮', function() {
     return driver
       .sleep(2000)
       .waitForElementByName('金融')
@@ -194,6 +193,8 @@ describe('macaca mobile sample', function() {
       .click()
       .sleep(3000);
   });
+  
+
 
 
   // it('#1 should login 商旅出行', function() {
