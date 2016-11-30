@@ -2,7 +2,6 @@
 
 var path = require('path');
 var _ = require('macaca-utils');
-var detect = require('detect-port');
 var xml2map = require('xml2map');
 
 var platform = process.env.platform || 'android';
@@ -49,10 +48,9 @@ wd.addPromiseChainMethod('customback', function() {
 describe('macaca mobile sample', function() {
   this.timeout(5 * 60 * 1000);
   
-  var wdport = yield detect(3456);
+  var wdport = process.env.MACACA_SERVER_PORT;
   var driver = null;
-  console.log('********************************************************'+wdport+'********************************************************************************');
-  console.log(wdPort);
+  console.log('******************************'+wdport+'********************************************');
   if(wdport==3456){
     driver = wd.initPromiseChain();
    }else{
