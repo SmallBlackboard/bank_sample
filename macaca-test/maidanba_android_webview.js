@@ -51,7 +51,7 @@ wd.addPromiseChainMethod('customback', function() {
 describe('macaca mobile sample', function() {
   this.timeout(5 * 60 * 1000);
   var driver = null;
-  if(wdPort.port==='3456'){
+  if(wdPort.port=='3456'){
     driver = wd.initPromiseChain();
    }else{
     driver = wd.initPromiseChain(wdPort);
