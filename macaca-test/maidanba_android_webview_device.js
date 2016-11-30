@@ -49,7 +49,7 @@ wd.addPromiseChainMethod('customback', function() {
 describe('macaca mobile sample', function() {
   this.timeout(5 * 60 * 1000);
   
-  var wdport = process.env.MACACA_SERVER_PORT;
+  var wdport = detect();
   var driver = null;
   console.log('******************************jsport:'+wdport+'********************************************');
   if(wdport==3456){
