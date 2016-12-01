@@ -2,7 +2,6 @@
 
 var path = require('path');
 var _ = require('macaca-utils');
-var detect = require('detect-port');
 var xml2map = require('xml2map');
 
 var platform = process.env.platform || 'android';
@@ -27,7 +26,7 @@ var androidOpts = {
   platformName: 'Android',
   package: 'com.bankcomm.maidanba',
   reuse: 2,
-  udid:  process.env.udid || 'DU2MYN146D002912',
+  udid:  process.env.udid || '2353c4bb',
   activity: '.activity.SplashActivity',
   // activity: 'com.bankcomm.maidanba/.activity.SplashActivity',
   // app: path.join(__dirname, '..', 'app', `${platform}-app-bootstrap.zip`)
@@ -49,16 +48,8 @@ wd.addPromiseChainMethod('customback', function() {
 describe('macaca mobile sample', function() {
   this.timeout(5 * 60 * 1000);
   
-  var wdport = process.env.MACACA_SERVER_PORT;
-  var driver = null;
-  console.log('******************************jsport:'+wdport+'********************************************');
-  if(wdport==3456){
-    driver = wd.initPromiseChain();
-   }else{
-      console.log('******************************jsport:'+wdport+'********************************************');
-    driver = wd.initPromiseChain({port:wdport});
-   }
-
+  var driver = wd.initPromiseChain();
+   
   driver.configureHttp({
     timeout: 600000
   });
