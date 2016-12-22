@@ -66,41 +66,18 @@ describe('macaca mobile sample', function() {
   });
 
 
-  // it('#1 联合商城', function() {
-
-  //   return driver
-  //     .sleep(2000)
-  //     .waitForElementByName('生活')
-  //     .click()
-  //     .sleep(3000)
-  //     .elementByName('联合商城')
-  //     .click()
-  //     .sleep(3000)
-  //     .webview()
-  //     .elementByXPath(
-  //       '//*[@id="layout"]/div[2]/div/table/tbody/tr[1]/td[2]/a/img')
-  //     .click()
-  //     .sleep(3000)
-  //     .elementByXPath('//*[@id="layout"]/div[2]/a')
-  //     .click()
-  //     .sleep(3000)
-  //     ;
-
-  // });
-
-
-  it('#1 点击金融按钮', function() {
+  it('#1 点击福利社按钮', function() {
     return driver
       .sleep(2000)
-      .waitForElementByName('金融')
+      .waitForElementByName('福利社')
       .click()
       .sleep(3000);
   });
 
-  it('#2 点击生活按钮', function() {
+  it('#2 点击卡支付按钮', function() {
     return driver
       .sleep(2000)
-      .waitForElementByName('生活')
+      .waitForElementByName('卡支付')
       .click()
       .sleep(3000);
   });
@@ -121,18 +98,18 @@ describe('macaca mobile sample', function() {
       .sleep(3000);
   });
 
-  it('#5 点击金融按钮', function() {
+  it('#5 点击福利社按钮', function() {
     return driver
       .sleep(2000)
-      .waitForElementByName('金融')
+      .waitForElementByName('福利社')
       .click()
       .sleep(3000);
   });
 
-  it('#6 点击生活按钮', function() {
+  it('#6 点击卡支付按钮', function() {
     return driver
       .sleep(2000)
-      .waitForElementByName('生活')
+      .waitForElementByName('卡支付')
       .click()
       .sleep(3000);
   });
@@ -153,18 +130,18 @@ describe('macaca mobile sample', function() {
       .sleep(3000);
   });
   
-  it('#9 点击金融按钮', function() {
+  it('#9 点击福利社按钮', function() {
     return driver
       .sleep(2000)
-      .waitForElementByName('金融')
+      .waitForElementByName('福利社')
       .click()
       .sleep(3000);
   });
 
-  it('#10 点击生活按钮', function() {
+  it('#10 点击卡支付按钮', function() {
     return driver
       .sleep(2000)
-      .waitForElementByName('生活')
+      .waitForElementByName('卡支付')
       .click()
       .sleep(3000);
   });
@@ -184,24 +161,4 @@ describe('macaca mobile sample', function() {
       .click()
       .sleep(3000);
   });
-  
-
-
-
-  // it('#1 should login 商旅出行', function() {
-  //
-  //   return driver
-  //     .sleep(2000)
-  //     .waitForElementByName('生活')
-  //     .click()
-  //     .sleep(3000)
-  //     .elementByName('商旅出行')
-  //     .click()
-  //     .sleep(3000)
-  //     .webview()
-  //     .elementByXPath(
-  //       '//*[@id="layout"]/div[2]/div[3]/ul/li[1]/a')
-  //     .click()
-  //     .sleep(3000);
-  // });
 });
